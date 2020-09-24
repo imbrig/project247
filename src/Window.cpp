@@ -158,6 +158,8 @@ int Window::create(HINSTANCE hInstance, int nCmdShow) {
 		0
 	};
 
+	// Rendering Context is created from the Device Context here
+	// I believe it's the rendering context that needs to be passed to Babylon
 	RC = wglCreateContextAttribsARB(DC, 0, contextAttribs);
 	if (RC == NULL) {
 		showMessage(L"wglCreateContextAttribsARB() failed.");
@@ -176,6 +178,8 @@ int Window::create(HINSTANCE hInstance, int nCmdShow) {
 	}
 
 	// init opengl loader here (extra safe version)
+
+	// We can set up Babylon here for instance
 
 	SetWindowTextA(WND, reinterpret_cast<LPCSTR>(glGetString(GL_VERSION)));
 	ShowWindow(WND, nCmdShow);
@@ -227,6 +231,7 @@ void Window::render() {
 
 	glClearColor(0.f, 0.f, 0.5f, 1.f); //Navy Blue
 	glClear(GL_COLOR_BUFFER_BIT);
+	// Update and Draw Babylon here
 }
 
 ///////////////////////////////////////////////////////////
