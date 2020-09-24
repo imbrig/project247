@@ -12,7 +12,7 @@
 
 class Window {
 public:
-	LPTSTR windowClass;	// Window Class
+	LPCWSTR windowClass;	// Window Class
 	HGLRC RC;			// Rendering Context
 	HDC	DC;				// Device Context
 	HWND WND;			// Window
@@ -28,7 +28,7 @@ public:
 
 	Window();
 	~Window();
-	void showMessage(LPCSTR message);
+	void showMessage(LPCWSTR message);
 	int create(HINSTANCE hInstance, int nCmdShow);
 	ATOM registerClass(HINSTANCE hInstance);
 	void adjustSize();
